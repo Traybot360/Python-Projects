@@ -1,5 +1,11 @@
 from colorama import Fore, Style
 
+# NOTE: remove on repl.it
+# for windows 10 colors
+from colorama import init
+init(convert=True)
+# end of windows 10 colors
+
 class Factorial:
   # constructor
   def __init__(self, number):
@@ -19,4 +25,4 @@ class Factorial:
     else:
       return n * self.factorial(n-1)
 
-f = Factorial(input())
+f = Factorial(input("Please input the number: "))
