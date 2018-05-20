@@ -25,6 +25,6 @@ In mathematics, the factorial of a non-negative integer n, denoted by n!, is the
 #### Solution captures
 
 ![Solution capture](Factorial/1.JPG?raw=true "Solution capture")  
+![Solution capture](Factorial/4.JPG?raw=true "Solution capture")  
 ![Solution capture](Factorial/2.JPG?raw=true "Solution capture")  
 ![Solution capture](Factorial/3.JPG?raw=true "Solution capture")  
-![Solution capture](Factorial/4.JPG?raw=true "Solution capture")  
