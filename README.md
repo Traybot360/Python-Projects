@@ -13,10 +13,10 @@ In mathematics, Pascal's triangle is a triangular array of the binomial coeffici
 
 #### Solution captures
 
-![Solution capture](Pascal's_triangle/1.JPG?raw=true "Solution capture")
-![Solution capture](Pascal's_triangle/2.JPG?raw=true "Solution capture")
-![Solution capture](Pascal's_triangle/3.JPG?raw=true "Solution capture")
-![Solution capture](Pascal's_triangle/4.JPG?raw=true "Solution capture")
+![Solution capture](Pascal's_triangle/1.JPG?raw=true "Solution capture")  
+![Solution capture](Pascal's_triangle/2.JPG?raw=true "Solution capture")  
+![Solution capture](Pascal's_triangle/3.JPG?raw=true "Solution capture")  
+![Solution capture](Pascal's_triangle/4.JPG?raw=true "Solution capture")  
 
 ### [Factorial](Factorial/factorial.py)
 
@@ -24,7 +24,7 @@ In mathematics, the factorial of a non-negative integer n, denoted by n!, is the
 
 #### Solution captures
 
-![Solution capture](Factorial/1.JPG?raw=true "Solution capture")
-![Solution capture](Factorial/2.JPG?raw=true "Solution capture")
-![Solution capture](Factorial/3.JPG?raw=true "Solution capture")
-![Solution capture](Factorial/4.JPG?raw=true "Solution capture")
+![Solution capture](Factorial/1.JPG?raw=true "Solution capture")  
+![Solution capture](Factorial/2.JPG?raw=true "Solution capture")  
+![Solution capture](Factorial/3.JPG?raw=true "Solution capture")  
+![Solution capture](Factorial/4.JPG?raw=true "Solution capture")  
