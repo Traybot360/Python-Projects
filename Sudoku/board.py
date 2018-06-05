@@ -1,3 +1,6 @@
+from colorama import Fore, Style
+from data import Data
+from cell import Cell
 class Board:
     # constructor 
     def __init__(self, data):
