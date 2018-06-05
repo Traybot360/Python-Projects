@@ -1,12 +1,6 @@
 import math
 from colorama import Fore, Style
 
-# NOTE: remove on repl.it
-# for windows 10 colors
-from colorama import init
-init(convert=True)
-# end of windows 10 colors
-
 class Pascal:
     # constructor
     def __init__(self, amount):
