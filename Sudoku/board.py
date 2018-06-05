@@ -48,6 +48,7 @@ class Board:
                 # add actual cells to result data set
                 else:
                     rows.append(self.__data.get_value(row,col))
+                # if row has 9 items append it and empty it after
                 if counter % 9 == 8:
                     result.append(rows)
                     rows = []
