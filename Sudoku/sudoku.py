@@ -1,12 +1,6 @@
 from colorama import Fore, Style
 import random
 
-# NOTE: remove on repl.it
-# for windows 10 colors
-from colorama import init
-init(convert=True)
-# end of windows 10 colors
-
 class Cell:
     # constructor 
     def __init__(self, value, x, y, row, col, sqr):
