@@ -7,21 +7,21 @@ The objective is to fill a 9×9 grid with digits so that each column, each row, 
 ![Given](Sudoku/given.png?raw=true "Given")
 ![Solved](Sudoku/solved.png?raw=true "Solved")
 
-```random```,```colorama```
+```random``` ```colorama```
 
 ### [Clock with Turtle](Clock/clock.py)
 
 This challenge consists of using the Python turtle library and the time library to create a program that displays the current time as an anlogue clock.
 
-![Clock](Clock/clock.JPG?raw=true "Clock")
+![Clock](Clock/clock.png?raw=true "Clock")
 
-```turtle```,```time```
+```turtle``` ```time```
 
 ### [Pascal's triangle](Pascal's_triangle/pascal.py)
 
 In mathematics, Pascal's triangle is a triangular array of the binomial coefficients. The rows of Pascal's triangle are conventionally enumerated starting with row n = 0 at the top (the 0th row). The entries in each row are numbered from the left beginning with k = 0 and are usually staggered relative to the numbers in the adjacent rows. The triangle may be constructed in the following manner: In row 0 (the topmost row), there is a unique nonzero entry 1. Each entry of each subsequent row is constructed by adding the number above and to the left with the number above and to the right, treating blank entries as 0. For example, the initial number in the first (or any other) row is 1 (the sum of 0 and 1), whereas the numbers 1 and 3 in the third row are added to produce the number 4 in the fourth row.
 
-```math```,```colorama```
+```math``` ```colorama```
 
 ### [Factorial](Factorial/factorial.py)
 
