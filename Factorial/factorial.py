@@ -6,7 +6,7 @@ class Factorial:
     self.number = number
     try:
       if int(self.number) >= 0:
-        print(Fore.GREEN + str(self.factorial(int(self.number))) + Style.RESET_ALL)
+        print(Fore.GREEN + "Answer: " + Fore.BLUE + str(self.factorial(int(self.number))) + Style.RESET_ALL)
       else:
         raise ValueError()
     except ValueError:
