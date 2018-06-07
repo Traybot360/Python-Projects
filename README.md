@@ -3,12 +3,12 @@
 ### [Bank](Bank/)
 
 #### TODO
--[ ] Add Bank Class
--[ ] Store accounts into the Bank from accounts.json
--[ ] Add Account Class
--[ ] Add Debit Class
--[ ] Add Credit Class
--[ ] Add Capture of working solution
+- [ ] Add Bank Class
+- [ ] Store accounts into the Bank from accounts.json
+- [ ] Add Account Class
+- [ ] Add Debit Class
+- [ ] Add Credit Class
+- [ ] Add Capture of working solution
 ____ 
 > Bank account will hold following information.
 
