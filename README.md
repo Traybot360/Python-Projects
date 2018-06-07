@@ -1,5 +1,37 @@
 # Python projects
 
+### [Bank](Bank/)
+
+#### TODO
+-[ ] Add Bank Class
+-[ ] Store accounts into the Bank from accounts.json
+-[ ] Add Account Class
+-[ ] Add Debit Class
+-[ ] Add Credit Class
+-[ ] Add Capture of working solution
+____ 
+> Bank account will hold following information.
+
+```json
+{
+  "id": 1,
+  "first_name": "Tera",
+  "last_name": "Gong",
+  "email": "tgong0@uiuc.edu",
+  "debit": "5100148435027672",
+  "debit_balance": "$4279.18",
+  "credit": "3533871591867209",
+  "credit_balance": "$-3831.24",
+  "bank": "Eazzy",
+  "opened": "3/27/2012"
+}
+```
+
+![Capture](Bank/capture.png?raw=true "Capture")
+
+```json``` ```time```
+
+
 ### [Sudoku Solver](Sudoku/)
 
 The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution.
