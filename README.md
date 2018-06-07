@@ -9,6 +9,7 @@
 - [ ] Add Debit Class
 - [ ] Add Credit Class
 - [ ] Add Capture of working solution
+- [ ] Add project description
 ____ 
 > Bank account will hold following information.
 
@@ -42,6 +43,8 @@ The objective is to fill a 9×9 grid with digits so that each column, each row, 
 ```random``` ```colorama```
 
 ### [Clock with Turtle](Clock/clock.py)
+#### TODO
+- [ ] Add lates version from repl.it
 
 This challenge consists of using the Python turtle library and the time library to create a program that displays the current time as an anlogue clock.
 
