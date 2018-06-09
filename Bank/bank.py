@@ -18,16 +18,22 @@ class Bank:
     
     # add account to the bank
     def add_account(self):
-        # print(self.accounts[0]['id'])
-        # print(self.accounts[0]['first_name'])
-        # print(self.accounts[0]['last_name'])
-        # print(self.accounts[0]['email'])
-        # print(self.accounts[0]['debit'])
-        # print(self.accounts[0]['debit_balance'])
-        # print(self.accounts[0]['credit'])
-        # print(self.accounts[0]['credit_balance'])
-        # print(self.accounts[0]['bank'])
-        # print(self.accounts[0]['opened'])
+        
+    # find a next account id    
+    def find_next_id(self):
+        # starting point
+        self.next_id = 0
+        # for each of the accounts
+        for account in range(len(self.accounts)):
+            # check if the account has the greatest id
+            if self.next_id < accounts[account]['id']:
+                # if it does then assign next_id a new value
+                self.next_id = accounts[account]['id']
+        # once the greatest id was found add 1 to it to make a new account
+        self.next_id += 1
+
+        return self.next_id
+
 
 bank = Bank("accounts.json")
 bank.add_account()
