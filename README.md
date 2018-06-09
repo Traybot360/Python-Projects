@@ -31,7 +31,11 @@ ____
 
 ![Capture](Bank/capture.png?raw=true "Capture")
 
+<<<<<<< HEAD
 ```json``` ```time``` ```math```
+=======
+```json``` ```time``` ```turtle``` ```math```
+>>>>>>> 7a1939be18f845f9ebbf97c968912967b5cc253f
 
 
 ### [Sudoku Solver](Sudoku/)
