@@ -43,8 +43,6 @@ The objective is to fill a 9×9 grid with digits so that each column, each row, 
 ```random``` ```colorama```
 
 ### [Clock with Turtle](Clock/clock.py)
-#### TODO
-- [ ] Add version from repl.it
 
 This challenge consists of using the Python turtle library and the time library to create a program that displays the current time as an anlogue clock.
 

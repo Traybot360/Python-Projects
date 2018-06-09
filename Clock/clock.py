@@ -61,6 +61,22 @@ class Clock:
 def main():  
   clock = Clock(turtles,100)
   clock.border()
+  
+  # numbers
+  t = turtle.Turtle()
+  t.speed(0)
+  t.hideturtle()
+  for number in range(1,13):
+    t.penup()
+    t.goto(0,100)
+    t.setheading((-1)*(30*number -90))
+    t.fd(85)
+    # # use next line to draw the numbers
+    # t.write(number, align="center")
+    # # use next 3 lines to draw the dashes
+    t.pendown()
+    t.fd(5)
+    t.penup()
 
   while True:
     turtle.tracer(0,0)
