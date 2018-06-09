@@ -31,7 +31,7 @@ ____
 
 ![Capture](Bank/capture.png?raw=true "Capture")
 
-```json``` ```time``` ```turtle```
+```json``` ```time``` ```math```
 
 
 ### [Sudoku Solver](Sudoku/)
@@ -60,6 +60,14 @@ In mathematics, Pascal's triangle is a triangular array of the binomial coeffici
 ![Triangle](Pascal's_triangle/solved.png?raw=true "Triangle")
 
 ```math``` ```colorama```
+
+### [Input](Input/input.py)
+
+Take input within the turtle canvas using Screen.
+
+![Capture](Input/capture.png?raw=true "Capture")
+
+```turtle```
 
 ### [Factorial](Factorial/factorial.py)
 
