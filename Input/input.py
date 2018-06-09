@@ -12,9 +12,11 @@ class Input:
         pen.write(self.string,align="center", font=("Arial", 12, "normal"))
 
     # display the result when user hit Enter
-    def myf(self):
+    def display(self):
         pen.clear()
+        pen.color("red")
         pen.write("You have entered: " + self.string,align="center", font=("Arial", 12, "normal"))
+        pen.color("black")
         self.string = ""
   
     # erase last character using Backspace
@@ -37,7 +39,7 @@ screen = turtle.Screen()
 inp = Input()
 
 # check user input
-screen.onkey(lambda: inp.myf(), "Enter")
+screen.onkey(lambda: inp.display(), "Enter")
 screen.onkey(lambda: inp.erase(), "BackSpace")
 screen.onkey(lambda: inp.key(" "), "Space")
 screen.onkey(lambda: inp.key("a"), "a")
