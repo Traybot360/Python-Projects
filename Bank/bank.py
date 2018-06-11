@@ -17,11 +17,9 @@ class Bank:
         file.close() 
     
     # add account to the bank
-    def add_account(self, _id, first_name, last_name, email, debit, debit_balance, credit, credit_balance, bank, opened):
+    def add_account(self, account):
         # open file object
         file = open(filename,"w")
-        # create a new account 
-        account = Account(_id, first_name, last_name, email, debit, debit_balance, credit, credit_balance, bank, opened)
         # push account into accounts list
         self.accounts.append(account)
         # save new accounts list into the file
@@ -29,7 +27,23 @@ class Bank:
         # close the file
         file.close() 
     
+    # update account of the bank
+    def update_account(self, account):
+        # open file object
+        file = open(filename,"w")
+
+        # for each of the accounts
+        for account in range(len(self.accounts)):
+            # check if the account id matches
+            if account['id'] == accounts[i]['id']:
+                # update account
+                self.accounts[i].update_account(account)
         
+        # save new accounts list into the file
+        file.write(json.dumps(self.accounts))
+        # close the file
+        file.close()
+
     # find a next account id    
     def find_next_id(self):
         # starting point
