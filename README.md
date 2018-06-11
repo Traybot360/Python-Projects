@@ -42,9 +42,24 @@ The objective is to fill a 9×9 grid with digits so that each column, each row, 
 
 ```random``` ```colorama```
 
+### [Snake](Snake/)
+
+#### TODO
+- [ ] Add Snake Class
+- [ ] Add Food Class
+- [ ] Add Cell Class
+
+This challenge consists of using Python turtle library and random library to create a program that looks like a snake.
+
+
+![Capture](Snake/capture.png?raw=true "Capture")
+
+```turtle``` ```random```
+
+
 ### [Clock with Turtle](Clock/clock.py)
 
-This challenge consists of using the Python turtle library and the time library to create a program that displays the current time as an anlogue clock.
+This challenge consists of using Python turtle library and time library to create a program that displays the current time as an anlogue clock.
 
 ![Clock](Clock/clock.png?raw=true "Clock")
 
