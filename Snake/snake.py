@@ -61,12 +61,14 @@ class Snake:
     self.snake = []
     self.direction = "Right"
     self.begin_length = 5
-
+    # create food
     self.food = Food()
     self.food.draw_food()
     # turtle for snake
     self.pen = turtle.Turtle()
+    self.pen.hideturtle()
     self.pen.speed(0)
+    # create snake
     self.create_snake()
   
   # set snake direction
@@ -105,22 +107,49 @@ class Snake:
 
   def move_snake(self):
     self.pen.clear()
-    print(self.direction)
-    if self.direction == "Right":
-      for square in range(len(self.snake)):
-        self.snake[square].x += self.snake[0].cell_size
-    if self.direction == "Left":
-      for square in range(len(self.snake)):
-        self.snake[square].x -= self.snake[0].cell_size
-    if self.direction == "Up":
-      for square in range(len(self.snake)):
-        self.snake[square].y += self.snake[0].cell_size
-    if self.direction == "Down":
-      for square in range(len(self.snake)):
-        self.snake[square].y -= self.snake[0].cell_size
     
-    self.draw_snake()
+    if self.direction == "Right":
+      old_x = self.snake[0].x
+      old_y = self.snake[0].y
+      for square in range(len(self.snake)):
+        if square == 0: 
+          old_x = self.snake[square].x
+          self.snake[square].x += self.snake[0].cell_size
+        else:
+          old_x, self.snake[square].x = self.snake[square].x, old_x
+          old_y, self.snake[square].y = self.snake[square].y, old_y
+          
+    if self.direction == "Left":
+      old_x = self.snake[0].x
+      old_y = self.snake[0].y
+      for square in range(len(self.snake)):
+        if square == 0: 
+          self.snake[square].x -= self.snake[0].cell_size
+        else:
+          old_x, self.snake[square].x = self.snake[square].x, old_x
+          old_y, self.snake[square].y = self.snake[square].y, old_y
 
+
+    if self.direction == "Up":
+      old_x = self.snake[0].x
+      old_y = self.snake[0].y
+      for square in range(len(self.snake)):
+        if square == 0: 
+          self.snake[square].y += self.snake[0].cell_size
+        else:
+          old_x, self.snake[square].x = self.snake[square].x, old_x
+          old_y, self.snake[square].y = self.snake[square].y, old_y
+
+    if self.direction == "Down":
+      old_x = self.snake[0].x
+      old_y = self.snake[0].y
+      for square in range(len(self.snake)):
+        if square == 0: 
+          self.snake[square].y -= self.snake[0].cell_size
+        else:
+          old_x, self.snake[square].x = self.snake[square].x, old_x
+          old_y, self.snake[square].y = self.snake[square].y, old_y
+    
     # new position of the snake
     new_x = self.snake[0].x
     new_y = self.snake[0].y    
@@ -136,6 +165,8 @@ class Snake:
       # make more food
       self.food.create_food()
       self.food.draw_food()
+      self.draw_snake()
+
 
     # food_collision check
     if self.food_collision(new_x,new_y) == False:
@@ -144,8 +175,8 @@ class Snake:
         # border_collision check
         if self.border_collision(new_x,new_y) == False:
           # no collision, move snake forward
+          self.draw_snake()
           # self.move_snake()
-          pass
         else:
           # border_collision, game over
           self.game_over()
