@@ -1,10 +1,13 @@
 import turtle, random
 
+# create an instance of screen
+screen = turtle.Screen()
+
 class Cell:
   def __init__(self,t):
     self.x = 0
     self.y = 0
-    self.cell_size = 20
+    self.cell_size = 10
     self.t = t
   
   # draw a square
@@ -48,7 +51,9 @@ class Food:
   # draw the food
   def draw_food(self):
     self.t.clear()
+    turtle.tracer(0,0)
     self.cell.draw_cell(self.cell.x,self.cell.y, "green")
+    turtle.tracer(20,10)
  
 class Snake:
   # constructor
@@ -56,97 +61,120 @@ class Snake:
     self.snake = []
     self.direction = "Right"
     self.begin_length = 5
+
+    self.food = Food()
+    self.food.draw_food()
     # turtle for snake
     self.pen = turtle.Turtle()
     self.pen.speed(0)
+    self.create_snake()
   
   # set snake direction
   def set_direction(self,value):
     self.direction = value
+    self.move_snake()
+
+  def food_collision(self, x, y):
+    return self.food.food_collision(x,y)
+
+# TODO: change return 
+  def self_collision(self, x, y):
+    return False
+# TODO: change return 
+  def border_collision(self, x, y):
+    return False
+
+# TODO: change the frame rate using tracer
+  def increase_speed(self):
+    pass
+    # self.speed += 1
 
   def create_snake(self):
     for i in range(self.begin_length):
       cell = Cell(self.pen)
       cell.set_cell(i*-cell.cell_size,cell.cell_size)
       self.snake.append(cell)
+    self.draw_snake()
 
   def draw_snake(self):
     self.pen.clear()
     turtle.tracer(0,0)
     for i in range(len(self.snake)):
       self.snake[i].draw_cell(self.snake[i].x,self.snake[i].y, "black")
-    turtle.tracer(20,0)
-
-  def food_collision(self, x, y):
-    self.food.food_collision(x,y)
-
-  # TODO: finish later
-  def increase_speed(self):
-    pass
-    # self.speed += 1
-    # change the frame rate using tracer
+    turtle.tracer(20,400)
 
   def move_snake(self):
-    n_x = self.snake[0].x
-    n_y = self.snake[0].y
-
-    # TODO: check this later
-    tail = []
-
+    self.pen.clear()
+    print(self.direction)
     if self.direction == "Right":
-      n_x += self.cell_size
+      for square in range(len(self.snake)):
+        self.snake[square].x += self.snake[0].cell_size
     if self.direction == "Left":
-      n_x -= self.cell_size
+      for square in range(len(self.snake)):
+        self.snake[square].x -= self.snake[0].cell_size
     if self.direction == "Up":
-      n_y += self.cell_size
+      for square in range(len(self.snake)):
+        self.snake[square].y += self.snake[0].cell_size
     if self.direction == "Down":
-      n_x -= self.cell_size
+      for square in range(len(self.snake)):
+        self.snake[square].y -= self.snake[0].cell_size
+    
+    self.draw_snake()
 
-    if self.food_collision(n_x,n_y) == False:
-      tail = self.snake.pop()
-      # TODO: figure out why do we need this
-      # tail.x = nx;
-      # tail.y = ny;
-    if self.food_collision(n_x,n_y) == True:
-      tail = self.snake_body(n_x,n_y)
+    # new position of the snake
+    new_x = self.snake[0].x
+    new_y = self.snake[0].y    
+
+    # food_collision
+    if self.food_collision(new_x,new_y) == True:
+      # add square to the snake
+      cell = Cell(self.pen)
+      cell.set_cell(new_x,new_y)
+      self.snake.append(cell)
+      # make snake move faster
       self.increase_speed()
-      self.create_food()
-    # TODO: check this later
-    self.snake = self.snake[1:]
+      # make more food
+      self.food.create_food()
+      self.food.draw_food()
 
-  # TODO: check this later
-  def collision(self):
-    pass# if snake[0]
-
-# create an instance of screen
-screen = turtle.Screen()
-
+    # food_collision check
+    if self.food_collision(new_x,new_y) == False:
+      # self_collision check
+      if self.self_collision(new_x,new_y) == False:
+        # border_collision check
+        if self.border_collision(new_x,new_y) == False:
+          # no collision, move snake forward
+          # self.move_snake()
+          pass
+        else:
+          # border_collision, game over
+          self.game_over()
+      else:
+        # self_collision, game over
+        self.game_over()
+  
 def draw():
   # create an instance of turtle
   pen = turtle.Turtle()
   pen.hideturtle()
   # create an instance of snake
-  # snake = Snake()
-
-  # keep track of the game
-  gameOver = False  
+  snake = Snake()
   # check user input
   screen.onkey(lambda: snake.set_direction("Up"), "Up")
   screen.onkey(lambda: snake.set_direction("Left"), "Left")
   screen.onkey(lambda: snake.set_direction("Down"), "Down")
   screen.onkey(lambda: snake.set_direction("Right"), "Right")
-draw()
 
-# testing the food class
-food = Food()
-food.draw_food()
-food.create_food()
-food.draw_food()
-# testing the snake class
-snake = Snake()
-snake.create_snake()
-snake.draw_snake()
+  # keep track of the game
+  game_over = False  
+
+# TODO: check why onkey doesn't work with while/recursion
+  # while not game_over:
+  #   snake.move_snake()
+
+draw()
 
 # listen to the changes 
 screen.listen()
 turtle.update()
+screen.mainloop()
