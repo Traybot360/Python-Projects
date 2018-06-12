@@ -79,12 +79,18 @@ class Snake:
   def food_collision(self, x, y):
     return self.food.food_collision(x,y)
 
-# TODO: change return 
+  def game_over(self):
+    self.pen.write("Game over")
   def self_collision(self, x, y):
     return False
-# TODO: change return 
   def border_collision(self, x, y):
-    return False
+    if x > 210 or x < -210:
+      return True
+    elif y > 210 or y < -210:
+      return True
+    else:
+      return False
+    
 
 # TODO: change the frame rate using tracer
   def increase_speed(self):
@@ -129,7 +135,6 @@ class Snake:
           old_x, self.snake[square].x = self.snake[square].x, old_x
           old_y, self.snake[square].y = self.snake[square].y, old_y
 
-
     if self.direction == "Up":
       old_x = self.snake[0].x
       old_y = self.snake[0].y
@@ -166,7 +171,6 @@ class Snake:
       self.food.create_food()
       self.food.draw_food()
       self.draw_snake()
-
 
     # food_collision check
     if self.food_collision(new_x,new_y) == False:
