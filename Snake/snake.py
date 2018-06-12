@@ -84,9 +84,9 @@ class Snake:
   def self_collision(self, x, y):
     return False
   def border_collision(self, x, y):
-    if x > 210 or x < -210:
+    if x > 200 or x < -200:
       return True
-    elif y > 210 or y < -210:
+    elif y > 200 or y < -200:
       return True
     else:
       return False
