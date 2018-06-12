@@ -46,8 +46,8 @@ The objective is to fill a 9×9 grid with digits so that each column, each row, 
 
 #### TODO
 - [ ] Add Snake Class
-- [ ] Add Food Class
-- [ ] Add Cell Class
+- [x] Add Food Class
+- [x] Add Cell Class
 
 This challenge consists of using Python turtle library and random library to create a program where the player maneuvers a line which grows in length, with the line itself being a primary obstacle.
 
