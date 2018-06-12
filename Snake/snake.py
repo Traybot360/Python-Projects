@@ -32,6 +32,9 @@ class Food:
     self.t.speed(0)
     self.cell = Cell(self.t)
 
+    self.colors = ["red","green","yellow","blue","magenta", "cyan"]
+
+
   # create food for snake
   def create_food(self):
     multiplier = (200-self.cell.cell_size)/self.cell.cell_size
@@ -49,8 +52,8 @@ class Food:
   def draw_food(self):
     self.t.clear()
     turtle.tracer(0,0)
-    self.cell.draw_cell(self.cell.x,self.cell.y, "green")
-    turtle.tracer(20,10)
+    self.cell.draw_cell(self.cell.x,self.cell.y, random.choice(self.colors))
+    turtle.tracer(20,0)
  
 class Snake:
   # constructor
@@ -218,6 +221,8 @@ class Game:
     self.screen.onkey(lambda: self.snake.set_direction("Right"), "Right")
     
     self.screen.listen()
+
+game = Game()
 
 # listen to the changes 
 turtle.update()
