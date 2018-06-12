@@ -23,6 +23,7 @@ class Cell:
     self.x = x
     self.y = y
 
+# TODO: food won't appear on the snake itself
 class Food:
   # constructor
   def __init__(self):
@@ -32,8 +33,8 @@ class Food:
     self.t.speed(0)
     self.cell = Cell(self.t)
 
+    # food colors
     self.colors = ["red","green","yellow","blue","magenta", "cyan"]
-
 
   # create food for snake
   def create_food(self):
@@ -55,6 +56,11 @@ class Food:
     self.cell.draw_cell(self.cell.x,self.cell.y, random.choice(self.colors))
     turtle.tracer(20,0)
  
+# TODO: self_collision check
+# TODO: game_over() -> move to the Game class
+# TODO: make sure the snake doesn't move as game is over
+# TODO: split move_snake() into smaller functions
+# TODO: add more comments
 class Snake:
   # constructor
   def __init__(self):
@@ -74,7 +80,15 @@ class Snake:
   
   # set snake direction
   def set_direction(self,value):
-    self.direction = value
+    if self.direction == "Right" and (value == "Up" or value == "Down"):
+      self.direction = value
+    if self.direction == "Left" and (value == "Up" or value == "Down"):
+      self.direction = value
+    if self.direction == "Up" and (value == "Left" or value == "Right"):
+      self.direction = value
+    if self.direction == "Down" and (value == "Left" or value == "Right"):
+      self.direction = value
+
     self.move_snake()
 
   def food_collision(self, x, y):
@@ -86,7 +100,6 @@ class Snake:
       if self.snake[0].x == self.snake[cell].x and self.snake[0].y == self.snake[cell].y:
         collision = True
     return collision
-    # return False
 
   def border_collision(self):
     if self.snake[0].x > 200 or self.snake[0].x < -200:
@@ -96,9 +109,7 @@ class Snake:
     else:
       return False
     
-  # TODO: move to the game class
   def game_over(self):
-    game_over = True
     self.pen.write("Game over")
 
   def increase_speed(self):
@@ -195,9 +206,12 @@ class Snake:
       else:
         # self_collision, game over
         self.game_over()
+
+# TODO: check why onkey doesn't work with while/recursion
+  # while not game_over:
+  #   snake.move_snake()
 class Game:
-  def __init__(self):    
-    
+  def __init__(self):     
     # create an instance of screen
     self.screen = turtle.Screen()
     
@@ -209,10 +223,6 @@ class Game:
 
     # keep track of the game
     self.game_over = False  
-
-    # TODO: check why onkey doesn't work with while/recursion
-    # while not game_over:
-    #   snake.move_snake()
 
     # check user input
     self.screen.onkey(lambda: self.snake.set_direction("Up"), "Up")
