@@ -59,7 +59,6 @@ class Food:
 # TODO: self_collision check
 # TODO: game_over() -> move to the Game class
 # TODO: make sure the snake doesn't move as game is over
-# TODO: split move_snake() into smaller functions
 # TODO: add more comments
 class Snake:
   # constructor
@@ -89,7 +88,7 @@ class Snake:
     if self.direction == "Down" and (value == "Left" or value == "Right"):
       self.direction = value
 
-    self.move_snake()
+    self.check_snake()
 
   def food_collision(self, x, y):
     return self.food.food_collision(x,y)
@@ -130,56 +129,29 @@ class Snake:
       self.snake[i].draw_cell(self.snake[i].x,self.snake[i].y, "black")
     turtle.tracer(20,self.speed)
 
+  # this function will move snake
   def move_snake(self):
-    self.pen.clear()
+    old_x = self.snake[0].x
+    old_y = self.snake[0].y
     
-    if self.direction == "Right":
-      old_x = self.snake[0].x
-      old_y = self.snake[0].y
-      for square in range(len(self.snake)):
-        if square == 0: 
-          old_x = self.snake[square].x
+    for square in range(len(self.snake)):
+      if square == 0: 
+        old_x = self.snake[square].x
+        if self.direction == "Right":  
           self.snake[square].x += self.snake[0].cell_size
-        else:
-          old_x, self.snake[square].x = self.snake[square].x, old_x
-          old_y, self.snake[square].y = self.snake[square].y, old_y
-          
-    if self.direction == "Left":
-      old_x = self.snake[0].x
-      old_y = self.snake[0].y
-      for square in range(len(self.snake)):
-        if square == 0: 
+        elif self.direction == "Left":
           self.snake[square].x -= self.snake[0].cell_size
-        else:
-          old_x, self.snake[square].x = self.snake[square].x, old_x
-          old_y, self.snake[square].y = self.snake[square].y, old_y
-
-    if self.direction == "Up":
-      old_x = self.snake[0].x
-      old_y = self.snake[0].y
-      for square in range(len(self.snake)):
-        if square == 0: 
+        elif self.direction == "Up":
           self.snake[square].y += self.snake[0].cell_size
-        else:
-          old_x, self.snake[square].x = self.snake[square].x, old_x
-          old_y, self.snake[square].y = self.snake[square].y, old_y
-
-    if self.direction == "Down":
-      old_x = self.snake[0].x
-      old_y = self.snake[0].y
-      for square in range(len(self.snake)):
-        if square == 0: 
+        elif self.direction == "Down":
           self.snake[square].y -= self.snake[0].cell_size
-        else:
-          old_x, self.snake[square].x = self.snake[square].x, old_x
-          old_y, self.snake[square].y = self.snake[square].y, old_y
+      else:
+        old_x, self.snake[square].x = self.snake[square].x, old_x
+        old_y, self.snake[square].y = self.snake[square].y, old_y
     
-    # new position of the snake
-    new_x = self.snake[0].x
-    new_y = self.snake[0].y    
-
+  def check_food_collision(self,x,y):
     # food_collision
-    if self.food_collision(new_x,new_y) == True:
+    if self.food_collision(x,y) == True:
       # add square to the snake
       cell = Cell(self.pen)
       cell.set_cell(new_x,new_y)
@@ -189,27 +161,30 @@ class Snake:
       # make more food
       self.food.create_food()
       self.food.draw_food()
-      self.draw_snake()
+      return True
+    elif self.food_collision(x,y) == False:
+      return False
+  
+  # this funciton will check snake collisions and move
+  def check_snake(self):
+    self.pen.clear()
+    self.move_snake()
+    
+    # check if snake ate more food
+    self.check_food_collision(self.snake[0].x,self.snake[0].y)      
 
-    # food_collision check
-    if self.food_collision(new_x,new_y) == False:
-      # self_collision check
-      if self.self_collision() == False:
-        # border_collision check
-        if self.border_collision() == False:
-          # no collision, move snake forward
-          self.draw_snake()
-          # self.move_snake()
-        else:
-          # border_collision, game over
-          self.game_over()
-      else:
-        # self_collision, game over
-        self.game_over()
+    # self_collision check
+    if self.self_collision() == True:
+      self.game_over()
+    # border_collision check
+    if self.border_collision() == True:
+      self.game_over()
 
-# TODO: check why onkey doesn't work with while/recursion
+    self.draw_snake()    
+
+# TODO: check why onkey() doesn't work with while/recursion
   # while not game_over:
-  #   snake.move_snake()
+  #   snake.check_snake()
 class Game:
   def __init__(self):     
     # create an instance of screen
