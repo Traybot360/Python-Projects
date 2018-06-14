@@ -23,7 +23,6 @@ class Cell:
     self.x = x
     self.y = y
 
-# TODO: food won't appear on the snake itself
 class Food:
   # constructor
   def __init__(self):
@@ -56,10 +55,7 @@ class Food:
     self.cell.draw_cell(self.cell.x,self.cell.y, random.choice(self.colors))
     turtle.tracer(20,0)
  
-# TODO: self_collision check
-# TODO: game_over() -> move to the Game class
-# TODO: make sure the snake doesn't move as game is over
-# TODO: add more comments
+
 class Snake:
   # constructor
   def __init__(self):
@@ -182,9 +178,7 @@ class Snake:
 
     self.draw_snake()    
 
-# TODO: check why onkey() doesn't work with while/recursion
-  # while not game_over:
-  #   snake.check_snake()
+
 class Game:
   def __init__(self):     
     # create an instance of screen

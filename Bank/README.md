@@ -2,6 +2,8 @@
 
 This challenge consists of using Python json, time, math, and unittest libraries to create a simple Banking program.
 
+## Description
+
 ## TODO
 - [ ] Add Bank Class
 - [ ] Store accounts into the Bank from accounts.json
@@ -27,3 +29,7 @@ This challenge consists of using Python json, time, math, and unittest libraries
   "opened": "3/27/2012"
 }
 ```
+
+![Capture](capture.png?raw=true "Capture")
+
+```json``` ```time``` ```math``` ```unittest```
