@@ -26,7 +26,7 @@ This challenge consists of using Python turtle library and random library to cre
 ```turtle``` ```random```
 
 
-## [Clock with Turtle](Clock/clock.py)
+## [Clock with Turtle](Clock/)
 
 This challenge consists of using Python turtle library and time library to create a program that displays the current time as an anlogue clock.
 
@@ -34,7 +34,7 @@ This challenge consists of using Python turtle library and time library to creat
 
 ```turtle``` ```time```
 
-## [Pascal's triangle](Pascal's_triangle/pascal.py)
+## [Pascal's triangle](Pascal's_triangle/)
 
 This challenge consists of using Python math library and colorama library to create a program that shows n rows of Pascal's triangle.
 
@@ -42,7 +42,7 @@ This challenge consists of using Python math library and colorama library to cre
 
 ```math``` ```colorama```
 
-## [Input](Input/input.py)
+## [Input](Input/)
 
 This challenge consists of using Python turtle library to create a program that takes key input within the canvas.
 
@@ -50,7 +50,7 @@ This challenge consists of using Python turtle library to create a program that 
 
 ```turtle```
 
-## [Factorial](Factorial/factorial.py)
+## [Factorial](Factorial/)
 
 This challenge consists of using Python colorama library to create a program that shows n! and validates user input.
 
