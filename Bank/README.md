@@ -4,15 +4,6 @@ This challenge consists of using Python json, time, math, and unittest libraries
 
 ## Description
 
-## TODO
-- [ ] Add Bank Class
-- [ ] Store accounts into the Bank from accounts.json
-- [ ] Add Account Class
-- [ ] Add Debit Class
-- [ ] Add Credit Class
-- [ ] Add Capture of working solution
-- [ ] Add project description
-
 ## Bank account will hold following information.
 
 ```json
