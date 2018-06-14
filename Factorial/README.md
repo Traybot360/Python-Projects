@@ -6,6 +6,7 @@ This challenge consists of using Python colorama library to create a program tha
 
 In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n.
 
+## Solution Capture
 
 ![Factorial](solved.png?raw=true "Factorial")
 

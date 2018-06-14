@@ -10,6 +10,8 @@ The objective is to fill a 9×9 grid with digits so that each column, each row, 
 
 - [ ] check that data set is valid
 
+## Solution Capture
+
 ![Given](given.png?raw=true "Given")
 ![Solved](solved.png?raw=true "Solved")
 

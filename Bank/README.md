@@ -30,6 +30,8 @@ This challenge consists of using Python json, time, math, and unittest libraries
 }
 ```
 
+## Solution Capture
+
 ![Capture](capture.png?raw=true "Capture")
 
 ```json``` ```time``` ```math``` ```unittest```
