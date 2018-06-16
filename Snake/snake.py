@@ -245,3 +245,4 @@ game = Game()
 
 # listen to the changes 
 turtle.update()
+turtle.Screen().mainloop()
