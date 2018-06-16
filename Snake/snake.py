@@ -173,7 +173,16 @@ class Snake:
       else:
         old_x, self.snake[square].x = self.snake[square].x, old_x
         old_y, self.snake[square].y = self.snake[square].y, old_y
-    
+
+  # check if food overlaps with the snake
+  def food_overlap(self):
+    for cell in self.snake:
+      if self.food.cell.x == cell.x:
+        self.food.create_food()
+        return True
+      
+    return False
+
   def check_food_collision(self,x,y):
     # food_collision
     if self.food_collision(x,y) == True:
@@ -184,7 +193,8 @@ class Snake:
       # make snake move faster
       self.increase_speed()
       # make more food
-      self.food.create_food()
+      while self.food_overlap():
+        self.food.create_food()
       self.food.draw_food()
       # increase the length of the snake
       self.begin_length += 1
