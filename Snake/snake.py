@@ -2,23 +2,32 @@ import turtle, random
 
 class Cell:
   def __init__(self,t):
+    # set initial position
     self.x = 0
     self.y = 0
+    # set initial size of a cell
     self.cell_size = 10
+    # set the turtle
     self.t = t
   
-  # draw a square
+  # draw a square at (x,y) of color
   def draw_cell(self,x,y,color):
+    # update cell information
+    self.set_cell(x,y)
+    # move to (x,y)
     self.t.penup()
     self.t.goto(self.x,self.y)
     self.t.pendown()
+    # set the color
     self.t.color(color)
+    # draw the square
     self.t.begin_fill()
     for i in range(4):
       self.t.fd(self.cell_size)
       self.t.left(90)
     self.t.end_fill()
   
+  # update coordinates of the cell
   def set_cell(self, x, y):
     self.x = x
     self.y = y
