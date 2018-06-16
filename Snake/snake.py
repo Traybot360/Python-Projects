@@ -83,17 +83,6 @@ class Snake:
     # if game is over this will be True
     self.game_over = False
 
-  # game over, print the message
-  def set_game_over(self,value):
-    if value == True:
-      self.game_over = value
-    else:
-      print("Error occured")
-  
-  # this function will pass the value from snake to game
-  def get_game_over(self):
-    return self.game_over
-
   # set snake direction
   def set_direction(self,value):
     if self.direction == "Right" and (value == "Up" or value == "Down"):
@@ -129,9 +118,13 @@ class Snake:
       return False
     
   # end the game
-  def game_over(self):
-    self.set_game_over(True)
-    self.pen.write("Game over")
+  def game_is_over(self):
+    if self.game_over:
+      self.pen.clear()
+      self.pen.write("Game over")
+      return True
+    else:
+      return False
 
   # move the snake faster as it goes
   def increase_speed(self):
@@ -193,7 +186,7 @@ class Snake:
       # make snake move faster
       self.increase_speed()
       # make more food
-      while self.food_overlap():
+      if self.food_overlap():
         self.food.create_food()
       self.food.draw_food()
       # increase the length of the snake
@@ -204,20 +197,25 @@ class Snake:
   
   # this funciton will check snake collisions and move
   def check_snake(self):
-    self.pen.clear()    
-    self.move_snake()   
+    self.pen.clear() 
+    if not self.game_over:    
+      self.move_snake()   
 
-    # check if snake ate more food
-    if self.check_food_collision(self.snake[0].x,self.snake[0].y):
-      print("Yummy")
-    # self_collision check
-    elif self.self_collision() == True:
-      self.game_over()
-    # border_collision check
-    elif self.border_collision() == True:
-      self.game_over()
+      # check if snake ate more food
+      if self.check_food_collision(self.snake[0].x,self.snake[0].y):
+        print("Score = " + str(self.begin_length - 5))
+      # self_collision check
+      elif self.self_collision() == True:
+        self.game_over = True
+      # border_collision check
+      elif self.border_collision() == True:
+        self.game_over = True
 
-    self.draw_snake()    
+      self.draw_snake()    
+      
+    # game over screen
+    if self.game_over:
+      self.game_is_over()
 
 class Game:
   def __init__(self):     
@@ -225,8 +223,8 @@ class Game:
     self.screen = turtle.Screen()
     
     # create an instance of turtle
-    pen = turtle.Turtle()
-    pen.hideturtle()
+    self.pen = turtle.Turtle()
+    self.pen.hideturtle()
     # create an instance of snake
     self.snake = Snake()
     
@@ -241,7 +239,16 @@ class Game:
     
     self.screen.listen()
 
+  def draw_border(self):
+    self.pen.penup()
+    self.pen.goto(-210,210)
+    self.pen.pendown()
+    for side in range(4):
+      self.pen.fd(420)
+      self.pen.right(90)
+
 game = Game()
+game.draw_border()
 
 # listen to the changes 
 turtle.update()
