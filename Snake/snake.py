@@ -62,8 +62,7 @@ class Food:
     self.t.clear()
     turtle.tracer(0,0)
     self.cell.draw_cell(self.cell.x,self.cell.y, random.choice(self.colors))
-    turtle.tracer(20,0)
- 
+    turtle.tracer(20,0) 
 
 class Snake:
   # constructor
@@ -81,7 +80,20 @@ class Snake:
     # create snake
     self.speed = 400
     self.create_snake()
+    # if game is over this will be True
+    self.game_over = False
+
+  # game over, print the message
+  def set_game_over(self,value):
+    if value == True:
+      self.game_over = value
+    else:
+      print("Error occured")
   
+  # this function will pass the value from snake to game
+  def get_game_over(self):
+    return self.game_over
+
   # set snake direction
   def set_direction(self,value):
     if self.direction == "Right" and (value == "Up" or value == "Down"):
@@ -92,12 +104,14 @@ class Snake:
       self.direction = value
     if self.direction == "Down" and (value == "Left" or value == "Right"):
       self.direction = value
-
+    
     self.check_snake()
 
+  # check snake collision with food
   def food_collision(self, x, y):
     return self.food.food_collision(x,y)
 
+  # check snake collision with itself
   def self_collision(self):
     collision = False
     for cell in range(1,len(self.snake)):
@@ -105,6 +119,7 @@ class Snake:
         collision = True
     return collision
 
+  # check snake collision with border
   def border_collision(self):
     if self.snake[0].x > 200 or self.snake[0].x < -200:
       return True
@@ -113,20 +128,25 @@ class Snake:
     else:
       return False
     
+  # end the game
   def game_over(self):
+    self.set_game_over(True)
     self.pen.write("Game over")
 
+  # move the snake faster as it goes
   def increase_speed(self):
     if self.speed > 100:
       self.speed -= 10
 
+  # create the snake at (0,0)
   def create_snake(self):
     for i in range(self.begin_length):
       cell = Cell(self.pen)
       cell.set_cell(i*-cell.cell_size,cell.cell_size)
       self.snake.append(cell)
-    self.draw_snake()
 
+    self.draw_snake()    
+  
   def draw_snake(self):
     self.pen.clear()
     turtle.tracer(0,0)
@@ -159,34 +179,35 @@ class Snake:
     if self.food_collision(x,y) == True:
       # add square to the snake
       cell = Cell(self.pen)
-      cell.set_cell(new_x,new_y)
+      cell.set_cell(x,y)
       self.snake.append(cell)
       # make snake move faster
       self.increase_speed()
       # make more food
       self.food.create_food()
       self.food.draw_food()
+      # increase the length of the snake
+      self.begin_length += 1
       return True
     elif self.food_collision(x,y) == False:
       return False
   
   # this funciton will check snake collisions and move
   def check_snake(self):
-    self.pen.clear()
-    self.move_snake()
-    
-    # check if snake ate more food
-    self.check_food_collision(self.snake[0].x,self.snake[0].y)      
+    self.pen.clear()    
+    self.move_snake()   
 
+    # check if snake ate more food
+    if self.check_food_collision(self.snake[0].x,self.snake[0].y):
+      print("Yummy")
     # self_collision check
-    if self.self_collision() == True:
+    elif self.self_collision() == True:
       self.game_over()
     # border_collision check
-    if self.border_collision() == True:
+    elif self.border_collision() == True:
       self.game_over()
 
     self.draw_snake()    
-
 
 class Game:
   def __init__(self):     
@@ -198,7 +219,7 @@ class Game:
     pen.hideturtle()
     # create an instance of snake
     self.snake = Snake()
-
+    
     # keep track of the game
     self.game_over = False  
 
