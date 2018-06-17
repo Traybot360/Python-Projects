@@ -3,8 +3,8 @@ import turtle, random
 class Cell:
   def __init__(self,t):
     # set initial position
-    self.x = 0
-    self.y = 0
+    self.x = 100
+    self.y = 100
     # set initial size of a cell
     self.cell_size = 10
     # set the turtle
@@ -46,9 +46,8 @@ class Food:
 
   # create food for snake
   def create_food(self):
-    multiplier = (200-self.cell.cell_size)/self.cell.cell_size
-    self.cell.x = random.randint(0,multiplier)*self.cell.cell_size 
-    self.cell.y = random.randint(0,multiplier)*self.cell.cell_size 
+    self.cell.x = random.randint(-20,20)*self.cell.cell_size 
+    self.cell.y = random.randint(-20,20)*self.cell.cell_size 
   
   # check if snake ate food
   def food_collision(self, x, y):
@@ -75,6 +74,8 @@ class Snake:
     self.food.draw_food()
     # turtle for snake
     self.pen = turtle.Turtle()
+    self.score = turtle.Turtle()
+    self.score.hideturtle()
     self.pen.hideturtle()
     self.pen.speed(0)
     # create snake
@@ -82,6 +83,14 @@ class Snake:
     self.create_snake()
     # if game is over this will be True
     self.game_over = False
+
+    # instructions 
+    self.info()
+
+  def info(self):
+    self.score.penup()
+    self.score.goto(0,250)
+    self.score.write("Score : 0", align="center", font=("Arial", 20, "normal"))
 
   # set snake direction
   def set_direction(self,value):
@@ -94,8 +103,6 @@ class Snake:
     if self.direction == "Down" and (value == "Left" or value == "Right"):
       self.direction = value
     
-    self.check_snake()
-
   # check snake collision with food
   def food_collision(self, x, y):
     return self.food.food_collision(x,y)
@@ -120,8 +127,13 @@ class Snake:
   # end the game
   def game_is_over(self):
     if self.game_over:
+      turtle.tracer(0,0)
       self.pen.clear()
-      self.pen.write("Game over")
+      self.pen.penup()
+      self.pen.goto(0,0)
+      self.pen.write("Game over",align="center",font=("Arial", 20, "normal"))
+      self.speed = 400
+      turtle.tracer(30,0)
       return True
     else:
       return False
@@ -203,7 +215,11 @@ class Snake:
 
       # check if snake ate more food
       if self.check_food_collision(self.snake[0].x,self.snake[0].y):
-        print("Score = " + str(self.begin_length - 5))
+        self.score.clear()
+        self.score.penup()
+        self.score.goto(0,250)
+        self.score.pendown()
+        self.score.write("Score : " + str(self.begin_length - 5), align="center", font=("Arial", 20, "normal"))
       # self_collision check
       elif self.self_collision() == True:
         self.game_over = True
@@ -220,24 +236,60 @@ class Snake:
 class Game:
   def __init__(self):     
     # create an instance of screen
-    self.screen = turtle.Screen()
-    
+    self.screen = turtle.Screen()    
+
     # create an instance of turtle
     self.pen = turtle.Turtle()
     self.pen.hideturtle()
-    # create an instance of snake
-    self.snake = Snake()
-    
-    # keep track of the game
-    self.game_over = False  
+    self.pen.speed(0)
+    self.pen.penup()
+    self.pen.goto(0,0)
+    self.pen.pendown()
+    self.pen.write("Press Enter to start", align="center", font=("Arial", 20, "normal"))
 
     # check user input
     self.screen.onkey(lambda: self.snake.set_direction("Up"), "Up")
     self.screen.onkey(lambda: self.snake.set_direction("Left"), "Left")
     self.screen.onkey(lambda: self.snake.set_direction("Down"), "Down")
     self.screen.onkey(lambda: self.snake.set_direction("Right"), "Right")
-    
+    self.screen.onkey(lambda: self.play_again(), "space")
+    self.screen.onkey(lambda: self.play(), "Return")
+    self.screen.onkey(lambda: self.exit_game(), "Escape")
+
     self.screen.listen()
+
+  def exit_game(self):
+    quit()
+
+  def play(self):
+    self.pen.clear()
+    self.draw_border()
+    self.draw_message()
+    # create an instance of snake
+    self.snake = Snake()
+    self.running = True
+    self.move_snake()
+
+  def move_snake(self):
+    self.snake.check_snake()
+    self.screen.ontimer(lambda: self.move_snake(), self.snake.speed)
+
+  def play_again(self):
+    self.snake.food.t.clear()
+    self.snake.pen.clear()
+    self.snake.score.clear()
+    self.snake.food.t.clear()
+    self.snake = None;
+    self.snake = Snake()
+    self.move_snake()
+
+  def draw_message(self):
+    self.pen.penup()
+    self.pen.goto(0,-250)
+    self.pen.write("Press Space to restart", align="center", font=("Arial", 20, "normal"))
+    self.pen.goto(0,-270)
+    self.pen.write("Press Esc to exit", align="center", font=("Arial", 20, "normal"))
+    self.pen.pendown()
 
   def draw_border(self):
     self.pen.penup()
@@ -248,7 +300,6 @@ class Game:
       self.pen.right(90)
 
 game = Game()
-game.draw_border()
 
 # listen to the changes 
 turtle.update()
