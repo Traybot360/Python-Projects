@@ -4,7 +4,7 @@ This challenge consists of using Python flask and json libraries to create a web
 
 ## Description
 
-This application is an example how to use Python with web development. It renders some JSON data.
+This application is an example how to use Python with web development. It renders some JSON data into the table.
 
 #### Solution Capture
 
