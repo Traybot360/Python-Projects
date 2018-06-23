@@ -1,4 +1,4 @@
-<!-- This block will be rendered for "/" route -->
+<!-- This block will be rendered for "/data" route -->
 {% extends 'layout.html' %} {% block body %}
 <div class="container">
     <h1>Here is some information about my car</h1>
@@ -11,11 +11,13 @@
             </tr>
         </thead>
         <tbody>
+            {% for car in cars %}
             <tr>
                 <td>{{car['car_id']}}</td>
                 <td>{{car['car_model']}}</td>
                 <td>{{car['car_speed']}}</td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
