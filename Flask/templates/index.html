@@ -1,0 +1,17 @@
+<!-- This block will be rendered for "/" route -->
+{% extends 'layout.html' %} {% block body %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Welcome to Flask app!</h1>
+        <p>
+            <a class="btn btn-large btn-light" href="/contact">
+                <i class="fa fa-snowflake-o"></i> Contact Me
+            </a>
+            <a class="btn btn-large btn-light" href="/data">
+                <i class="fa fa-user-secret"></i> Check my car
+            </a>
+        </p>
+    </div>
+</div>
+{% endblock %}

@@ -1,5 +1,16 @@
 # Python projects
 
+## [Flask Example](Flask/)
+
+This challenge consists of using Python flask and json libraries to create a website.
+
+#### Solution Capture
+
+![Capture](Flask/capture.png?raw=true "Capture")
+
+```flask``` ```json``` ```jinja2``` ```html5``` ```bootstrap4```
+
+
 ## [Bank](Bank/)
 
 This challenge consists of using Python json, time, math, and unittest libraries to create a simple Banking program.

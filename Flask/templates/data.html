@@ -1,0 +1,22 @@
+<!-- This block will be rendered for "/" route -->
+{% extends 'layout.html' %} {% block body %}
+<div class="container">
+    <h1>Here is some information about my car</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Car id </td>
+                <td>Car model </td>
+                <td>Car speed </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{car['car_id']}}</td>
+                <td>{{car['car_model']}}</td>
+                <td>{{car['car_speed']}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

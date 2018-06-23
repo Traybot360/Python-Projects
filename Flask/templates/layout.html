@@ -1,0 +1,26 @@
+<!-- This is layout file, it containes css and js includes as well as corresponding blocks to be rendered -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="uft-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Style includes -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Flask App</title>
+</head>
+
+<body>
+	<!-- Every block rendered based on the route will be inside container -->
+	<div class="container">
+        <!-- Navbar is always included -->
+	    {% include 'includes/_navbar.html'%}
+		{% block body %} {% endblock %}
+	</div>
+	<!-- JS includes -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+<html>
