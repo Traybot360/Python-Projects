@@ -2,7 +2,7 @@
 
 ## [Flask Example](Flask/)
 
-This challenge consists of using Python flask and json libraries to create a website.
+This challenge consists of using Python flask and json libraries to create a simple website.
 
 #### Solution Capture
 
