@@ -11,7 +11,7 @@
 
     <ul class="carousel-indicators">
       {% for link in links %}
-      <li data-target="#carouselExampleControls" class="{% if loop.index == 1 %} active{% endif %} data-slide-to="{{loop.index - 1}}" ></li>    
+      <li data-target="#carouselExampleControls" class="{% if loop.index == 1 %} active{% endif %}" data-slide-to="{{loop.index - 1}}"></li>    
       {% endfor %}
     </ul>
   
