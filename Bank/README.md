@@ -25,4 +25,4 @@ This challenge consists of using Python json, time, math, and unittest libraries
 
 ![Capture](capture.png?raw=true "Capture")
 
-```json``` ```time``` ```math``` ```unittest```
+```json``` ```time``` ```math``` ```unittest``` ```colorama```
