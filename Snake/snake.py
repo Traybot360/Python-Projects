@@ -43,7 +43,8 @@ class Snake(object):
         self.food.create_food()
         
     def set_direction(self,value):
-        """Change direction of the snake.
+        """Change direction of the snake. Possible directions are: 
+        `r`, `l`, `u`, `d`.
         Parameters
         ----------
         value : str
@@ -172,7 +173,7 @@ class Snake(object):
         return collision
     
     def increase_speed(self):
-        """Incerease spped of the snake.
+        """Incerease speed of the snake.
         Parameters
         ----------
         None
@@ -182,4 +183,3 @@ class Snake(object):
         """
         
         self.speed += 1
-        self.pen.speed(self.speed)
