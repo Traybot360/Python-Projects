@@ -8,6 +8,8 @@ The concept originated in the 1976 arcade game Blockade, and the ease of impleme
 
 ## Solution Capture
 
-![Capture](capture.png?raw=true "Capture")
+![Capture1](capture.png?raw=true "Capture")
+![Capture1](capture1.png?raw=true "Capture")
+![Capture1](capture2.png?raw=true "Capture")
 
 ```turtle``` ```random```
