@@ -82,7 +82,7 @@ class Game:
             self.draw_score()
             
             self.snake.move_snake()
-            self.screen.ontimer(lambda: self.check_snake(), 1000-self.snake.speed)
+            self.screen.ontimer(lambda: self.check_snake(), 100-self.snake.speed*2)
             
             # check if snake ate more food
             if self.snake.food_collision(self.snake.snake[0].x, self.snake.snake[0].y):
