@@ -1,7 +1,7 @@
 import turtle
 from snake import Snake
 
-turtle.tracer(0,5)
+turtle.tracer(0,0)
 screen = turtle.Screen()
 
 class Game:
