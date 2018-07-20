@@ -2,8 +2,6 @@ import turtle
 from food import Food
 from square import Square
 
-# TODO: fix food overlap error
-
 __version__ = '1.0.0'
 __author__ = 'Oleksii Polovyi'
 
@@ -22,6 +20,8 @@ class Snake(object):
         ----------
         pen : turtle
             Turtle object that will draw the square
+        food_pen : turtle
+            Turtle object that will draw the food
         Returns
         -------
         None

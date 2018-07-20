@@ -5,7 +5,20 @@ turtle.tracer(0,5)
 screen = turtle.Screen()
 
 class Game:
+    """This is a controller for Snake game"""
     def __init__(self, screen):     
+        """Constructor for Game class. This funcion is called upon 
+        initialization. It saves a Screen object as a class member,
+        creates snake_pen, food_pen, score_pen, border_pen turtles,
+        binds keyboard keys, and listens for user input.
+        Parameters
+        ----------
+        screen : turtle.Screen
+            Screen object of the turtle library
+        Returns
+        -------
+        None
+        """
         # create an instance of screen
         self.screen = screen    
 
@@ -29,9 +42,25 @@ class Game:
         self.screen.listen()
 
     def exit_game(self):
+        """This function will terminate the program when it is called.
+        Parameters
+        ----------
+        None
+        Returns
+        -------
+        None
+        """
         quit()
 
     def play(self):
+        """This function will start the game and reset all the values.
+        Parameters
+        ----------
+        None
+        Returns
+        -------
+        None
+        """
         self.game_over = False
 
         # clear the screen
@@ -52,11 +81,27 @@ class Game:
         self.check_snake()
   
     def draw_score(self):
+        """This function will draw game score.
+        Parameters
+        ----------
+        None
+        Returns
+        -------
+        None
+        """
         self.score_pen.penup()
         self.score_pen.goto(0,250)
         self.score_pen.write("Score : " + str(self.snake.length - 5), align="center", font=("Arial", 20, "normal"))
     
     def draw_information(self):
+        """This function will draw game information.
+        Parameters
+        ----------
+        None
+        Returns
+        -------
+        None
+        """
         self.border_pen.penup()
         self.border_pen.goto(0,-250)
         self.border_pen.write("Press Space to restart", align="center", font=("Arial", 18, "normal"))
@@ -65,6 +110,14 @@ class Game:
         self.border_pen.pendown()
 
     def draw_border(self):
+        """This function will draw game border.
+        Parameters
+        ----------
+        None
+        Returns
+        -------
+        None
+        """
         self.border_pen.penup()
         self.border_pen.goto(-210,210)
         self.border_pen.pendown()
@@ -74,6 +127,16 @@ class Game:
 
     # this funciton will check snake collisions and move
     def check_snake(self):
+        """This function will check snake state. If game is over, snake
+        game will show "Game Over" message. Otherwise, it will keep
+        running as usual snake game.
+        Parameters
+        ----------
+        None
+        Returns
+        -------
+        None
+        """
         if not self.game_over:  
             self.snake_pen.clear()
             self.snake.draw_snake() 
