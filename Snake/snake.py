@@ -14,8 +14,6 @@ class Snake(object):
         to 'r', default speed to 1, creates food for snake and creates
         snake itself.
 
-        Possible directions are : 'r', 'l', 'u', 'd'
-
         Parameters
         ----------
         pen : turtle
