@@ -19,7 +19,6 @@ class Food:
         None
         """
         self.pen = pen
-        self.pen.hideturtle()
         self.square = Square(self.pen)
         self.colors = ["red","green","yellow","blue","magenta", "cyan"]
     
