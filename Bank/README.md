@@ -18,7 +18,7 @@ This challenge consists of using Python json, time, math, and unittest libraries
   "opened": "3/27/2012"
 }
 ```
-
+and an edit function
 ## Accounts will have the following structure
 
 This class will hold account information.
