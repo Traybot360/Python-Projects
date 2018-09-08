@@ -19,12 +19,49 @@ This challenge consists of using Python json, time, math, and unittest libraries
 }
 ```
 
-## Accounts will have the following structure:
+## Accounts will have the following structure
+
+This class will hold account information.
+
+- balance
+- account_number
+- user
+- pin
+- transactions[]
+
+
 ```json
 {
 
 }
 ```
+
+This class will perform following actions.
+
+- update_account()
+- view_transactions()
+- view_account()
+- equals()
+- deposit()
+- withdraw()
+
+- get_account_number()
+- get_balance()
+- get_pin()
+- get_user()
+
+- set_account_number()
+- set_balance()
+- set_pin()
+- set_user()
+
+Accounts types:
+- CHEKING
+- SAVINGS
+- GIC
+- JOINT
+- CREDIT
+
 ## Solution Capture
 
 Coming soon...
