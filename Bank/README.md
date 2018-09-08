@@ -62,6 +62,19 @@ Accounts types:
 - JOINT
 - CREDIT
 
+## The user will have the following structure:
+### members
+- accounts[]
+- Id
+### functions
+- search_account()
+- merge_account()
+
+## The card will have the following structure
+- pin
+- Type (of card)
+
+
 ## This class will hold transaction information
 
 ### members
