@@ -19,7 +19,8 @@ This challenge consists of using Python json, time, math, and unittest libraries
 }
 ```
 
-## Account structure
+## Accounts will have the following structure
+
 This class will hold account information.
 
 - balance
@@ -28,7 +29,15 @@ This class will hold account information.
 - pin
 - transactions[]
 
+
+```json
+{
+
+}
+```
+
 This class will perform following actions.
+
 - update_account()
 - view_transactions()
 - view_account()
