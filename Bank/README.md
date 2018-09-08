@@ -64,13 +64,13 @@ Accounts types:
 
 ## This class will hold transaction information
 
-# members
+### members
 - balance
 - account_number_from
 - account_number_to
 - transaction_id
 
-#  functions
+###  functions
 - view_transaction()
 
 - get_account_number_from()
