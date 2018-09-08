@@ -19,6 +19,12 @@ This challenge consists of using Python json, time, math, and unittest libraries
 }
 ```
 
+## Accounts will have the following structure:
+```json
+{
+
+}
+```
 ## Solution Capture
 
 Coming soon...
