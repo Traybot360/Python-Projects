@@ -4,7 +4,7 @@ This challenge consists of using Python json, time, math, and unittest libraries
 
 ## Description
 
-## Personal information will hold following information.
+## Personal user information will have following structure
  
 ```json
 {
