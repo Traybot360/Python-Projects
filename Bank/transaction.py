@@ -21,3 +21,18 @@
 # set_balance()
 # set_transaction_id()
 
+class transaction:
+  def __init__(self,balance,account_number_from,account_number_to,transaction_id):
+    self.balance = balance,
+    self.account_number_to = account_number_to,
+    self.account_number_from = account_number_from,
+    self.transaction_id = transaction_id
+  def get_balance(self):
+    return self.balance
+  def get_account_number_from(self):
+    return account_number_from
+  def get_account_number_to(self):
+    return account_number_to
+  
+  
+    
