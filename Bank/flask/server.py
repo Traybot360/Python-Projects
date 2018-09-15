@@ -1,4 +1,6 @@
-from flask import Flask
+from flask import Flask, render_template, request
+import json
+
 app = Flask('app')
 
 #landing
@@ -7,19 +9,24 @@ def landing():
   return 'Welcome'
 
 #login
-@app.route('/login')
+@app.route('/login', methods=['GET','POST'])
 def login():
-  return 'login'
+  if request.method == "POST": 
+    if request.form["user"] == "nick":
+      print("good job yout logged in!")
+  return render_template('login.html')
+  
+
 
 #register
 @app.route('/register')
 def regiter():
   return 'register'
 
-#frogot
-@app.route('/frogot')
-def frogot():
-  return 'frogot'
+#forget
+@app.route('/forgot')
+def forgot():
+  return 'forgot'
 #about
 @app.route('/about')
 def about():
