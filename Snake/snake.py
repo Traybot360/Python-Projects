@@ -8,7 +8,7 @@ __author__ = 'Oleksii Polovyi'
 class Snake(object):
     """This class draws and operates the line for Snake game"""
     def __init__(self, pen, food_pen):
-        """Constructor for Square class. This funcion is called upon 
+        """Constructor for Snake class. This funcion is called upon 
         initialization. It saves a turtle object as a class member,
         start line length to 5, creates list of Squares, set direction
         to 'r', default speed to 1, creates food for snake and creates
