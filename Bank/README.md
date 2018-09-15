@@ -4,7 +4,7 @@ This challenge consists of using Python json, time, math, and unittest libraries
 
 ## Description
 
-`v0.0.5`
+`v0.0.6`
 
 ## Personal user information will have following structure
  
@@ -102,4 +102,13 @@ Accounts types:
 
 Coming soon...
 
+
+
 ```json``` ```time``` ```math``` ```unittest``` ```colorama``` ```flask```
+
+
+## change log for versions after v1.0.0
+
+
+
+
