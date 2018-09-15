@@ -4,7 +4,7 @@ This challenge consists of using Python json, time, math, and unittest libraries
 
 ## Description
 
-`v0.0.3`
+`beta v0.0.3`
 
 ## Personal user information will have following structure
  
