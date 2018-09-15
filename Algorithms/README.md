@@ -2,5 +2,9 @@
 [Book with examples using  `c++`](https://cathyatseneca.gitbook.io/data-strutures-and-algorithms/)
 ## [Linear Search](./linear_search.py)
 
-`The time complexity of above algorithm is O(n).`  
-Linear search is rarely used practically because other search algorithms allow significantly faster searching.
+Linear search is rarely used practically because other search algorithms allow significantly faster searching.  
+`The time complexity of above algorithm is O(n).`
+
+## [Fibonacci](./fibonacci.py)  
+In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones.
+` 0, 1, 1, 2, 3, 5, 8, ...`  
