@@ -104,7 +104,7 @@ Coming soon...
 
 
 
-```json``` ```time``` ```math``` ```unittest``` ```colorama``` ```flask```
+```json``` ```time``` ```math``` ```unittest``` ```colorama``` ```flask``` ```bulma```
 
 
 ## change log for versions after v1.0.0
