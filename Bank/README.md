@@ -1,6 +1,6 @@
 # Bank
 
-This challenge consists of using Python json, time, math, and unittest libraries to create a simple Banking program.
+This challenge consists of using Python json, time, math, and unittest libraries along with the flask framework to create a simple Banking program.
 
 ## Description
 
@@ -102,4 +102,4 @@ Accounts types:
 
 Coming soon...
 
-```json``` ```time``` ```math``` ```unittest``` ```colorama```
+```json``` ```time``` ```math``` ```unittest``` ```colorama``` ```flask```
