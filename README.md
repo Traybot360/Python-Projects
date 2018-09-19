@@ -1,5 +1,8 @@
 # Python projects
 
+- [Loggin with Python](https://www.digitalocean.com/community/tutorials/how-to-use-logging-in-python-3)
+- [Unittest Python](https://docs.python.org/3/library/unittest.html)
+
 ## [Flask Example](Flask/)
 
 This challenge consists of using Python flask and json libraries to create a simple website.
