@@ -1,7 +1,7 @@
 # Python projects
 
 - [Loggin with Python](https://www.digitalocean.com/community/tutorials/how-to-use-logging-in-python-3)
-- [Unittest Python](https://docs.python.org/3/library/unittest.html)
+- [Unittest](https://docs.python.org/3/library/unittest.html)
 
 ## [Flask Example](Flask/)
 
