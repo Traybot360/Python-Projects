@@ -3,6 +3,25 @@
 - [Loggin with Python](https://www.digitalocean.com/community/tutorials/how-to-use-logging-in-python-3)
 - [Unittest](https://docs.python.org/3/library/unittest.html)
 
+## [King Arthur](./Classes/)
+
+This project shows example of inheritance in python by printing the story.
+
+```
+Smaug created.
+Arthur created.
+Galahad created.
+-------------
+Smaug attacks the Arthur and deals 10 damage.
+Smaug attacks the Galahad and deals 10 damage.
+Smaug burns the Arthur and deals 20 damage.
+Galahad uses potion to heal the Arthur and heals 20 hp.
+-------------
+Arthur hp = 40.
+Arthur attack = 5.
+Arthur potion = 20.
+```
+
 ## [Flask Example](Flask/)
 
 This challenge consists of using Python flask and json libraries to create a simple website.
