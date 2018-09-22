@@ -1,4 +1,4 @@
-# King Arthur
+# [King Arthur](./King_Arthur.py)
 
 This project shows example of inheritance in python by printing the story.
 
