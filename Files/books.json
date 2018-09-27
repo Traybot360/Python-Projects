@@ -1,0 +1,14 @@
+[
+  {
+    "title":"Practical Data Integration for the Web",
+    "text":"JSON is becoming the backbone for meaningful data interchange over the internet. This format is now supported by an entire ecosystem of standards, tools, and technologies for building truly elegant, useful, and efficient applications."
+  },
+  {
+    "title":"Easy Learning of Javascript Standard Object Notation",
+    "text":"This book is an exploration of JavaScript Standard Object Notation (JSON). Most of you might have heard about it, and it is used for displaying data on web browsers. JSON supports conversions."
+  },
+  {
+    "title":"Learning Python",
+    "text":"Google and YouTube use Python because it's highly adaptable, easy to maintain, and allows for rapid development."
+  }
+]
