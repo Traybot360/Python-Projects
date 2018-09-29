@@ -28,7 +28,7 @@ This challenge consists of using Python turtle library and random library to cre
 
 ## [Clock with Turtle](Clock/)
 
-This challenge consists of using Python turtle library and time library to create a program that displays the current time as an anlogue clock.
+This challenge consists of using Python turtle library and time library to create a program that displays the current time as an anlogue clock.  
 [Demo](https://repl.it/@OleksiiPolovyi/Clock) :video_game:
 
 ## [Pascal's triangle](Pascal's_triangle/)
