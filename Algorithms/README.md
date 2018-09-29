@@ -13,5 +13,7 @@ In mathematics, the Fibonacci numbers are the numbers in the following integer s
 ## [Exponentiation](./power.py)  
 Exponentiation is a mathematical operation, written as b<sup>n</sup>, involving two numbers, the base b and the exponent n. When n is a positive integer, exponentiation corresponds to repeated multiplication of the base: that is, b<sup>n</sup> is the product of multiplying n bases.
 
-## [Binary Search](http://interactivepython.org/runestone/static/pythonds/SortSearch/TheBinarySearch.html)
+## [Binary Search](./binary.py)
 In computer science, binary search, also known as half-interval search, logarithmic search, or binary chop, is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array.
+
+[Demo](https://repl.it/@OleksiiPolovyi/Binary-search) :video_game:
