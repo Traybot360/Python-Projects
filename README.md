@@ -4,9 +4,13 @@
 
 This project shows how to use files in python.
 
+[Demo](https://repl.it/@OleksiiPolovyi/Files) :video_game:
+
 ## [King Arthur](Classes/)
 
 This project shows example of inheritance in python by printing the story.
+
+[Demo](https://repl.it/@OleksiiPolovyi/King-Arthur) :video_game:
 
 ## [Flask Example](Flask/)
 
