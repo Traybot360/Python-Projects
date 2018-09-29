@@ -39,3 +39,7 @@ This challenge consists of using Python turtle library to create a program that 
 ## [Factorial](Factorial/)
 
 This challenge consists of using Python colorama library to create a program that shows n! and validates user input.
+
+## [Algorithms](Algorithms/)
+
+Examples of Algorithms.
