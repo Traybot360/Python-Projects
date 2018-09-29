@@ -22,38 +22,39 @@ class User:
   def log_out(self):
     pass
   
-  def set_password(self): 
-    pass
+  def set_password(self,old_pass,new_pass): 
+    if(old_pass == self.password):
+      self.password = new_pass
 
-  def set_first_name(self):
-    pass
+  def set_first_name(self,name):
+    self.first_name = name
 
-  def set_last_name(self):
-    pass
+  def set_last_name(self,name):
+    self.last_name = name
 
-  def set_email(self):
-    pass
+  def set_email(self,email):
+    self.email = email
 
-  def set_phone_number(self):
-    pass
+  def set_phone_number(self,number):
+    self.phone_number = number
   
-  def set_sin(self):
-    pass
+  def set_sin(self,sin):
+    self.sin = sin
 
   def get_password(self):
-    pass
+    return self.password
 
   def get_first_name(self):
-    pass
+    return self.first_name
 
   def get_last_name(self):
-    pass
+    return self.last_name
 
   def get_email(self):
-    pass
+    return self.email
 
   def get_phone_number(self):
-    pass
+    return self.phone_number
     
   def get_sin(self):
-    pass
+    return self.sin
