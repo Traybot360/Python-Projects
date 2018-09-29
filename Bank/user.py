@@ -11,12 +11,12 @@ class User:
     self.sin = ""
 
   def view_user(self, user_id):
-    pass
+    return user_id
 
   def log_in(self, user_id, user_password):
-    pass
+    
   
-  def register(self):
+  def register(self,):
     pass
 
   def log_out(self):
