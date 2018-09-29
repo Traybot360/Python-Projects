@@ -2,16 +2,13 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def hello():
     return render_template('index.html')
 
-
 @app.route("/contact")
 def about():
     return render_template('contact.html')
-
 
 cars = [
     {"car_id": "112093012309120310", "car_model": "Honda",
@@ -34,24 +31,18 @@ cars = [
      "car_speed": "150"}
 ]
 
-
 @app.route("/data")
 def data():
     return render_template("data.html", cars=cars)
 
-
 @app.route("/gallery")
 def gallery():
     links = []
-    for i in range(1, 18):
-        if i < 10:
-            link = "../static/images/NatGeo0" + str(i) + ".jpg"
-        else:
-            link = "../static/images/NatGeo" + str(i) + ".jpg"
+    for i in range(1, 5):
+        link = "../static/images/NatGeo0" + str(i) + ".jpg"
         links.append(link)
 
     return render_template("gallery.html", links=links)
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
