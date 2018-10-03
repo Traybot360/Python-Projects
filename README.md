@@ -16,6 +16,8 @@ This project shows example of inheritance in python by printing the story.
 
 This challenge consists of using Python flask and json libraries to create a simple website.
 
+[Demo](https://repl.it/@OleksiiPolovyi/Flask) :video_game:
+
 ## [Sudoku Solver](Sudoku/)
 
 This challenge consists of using Python random library and colorama library to create a program that solves sudoku based on the given data set.
