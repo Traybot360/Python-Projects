@@ -1,181 +1,92 @@
-import turtle
-from snake import Snake
+import turtle, time
 
-turtle.tracer(0,0)
-screen = turtle.Screen()
+turtles = []
+for i in range(4):
+  turtles.append(turtle.Turtle())
 
-class Game:
-    """This is a controller for Snake game"""
-    def __init__(self, screen):     
-        """Constructor for Game class. This funcion is called upon 
-        initialization. It saves a Screen object as a class member,
-        creates snake_pen, food_pen, score_pen, border_pen turtles,
-        binds keyboard keys, and listens for user input.
-        Parameters
-        ----------
-        screen : turtle.Screen
-            Screen object of the turtle library
-        Returns
-        -------
-        None
-        """
-        # create an instance of screen
-        self.screen = screen    
-
-        # turtle for snake
-        self.snake_pen = turtle.Turtle(visible=False)
-        # turtle for food
-        self.food_pen = turtle.Turtle(visible=False)    
-        # turtle for score 
-        self.score_pen = turtle.Turtle(visible=False)    
-        # turtle for borders and information
-        self.border_pen = turtle.Turtle(visible=False)
-
-        # check user input
-        self.screen.onkey(lambda: self.snake.set_direction("u"), "Up")
-        self.screen.onkey(lambda: self.snake.set_direction("l"), "Left")
-        self.screen.onkey(lambda: self.snake.set_direction("d"), "Down")
-        self.screen.onkey(lambda: self.snake.set_direction("r"), "Right")
-        self.screen.onkey(lambda: self.play(), "space")
-        self.screen.onkey(lambda: self.exit_game(), "Escape")
-
-        self.screen.listen()
-
-    def exit_game(self):
-        """This function will terminate the program when it is called.
-        Parameters
-        ----------
-        None
-        Returns
-        -------
-        None
-        """
-        quit()
-
-    def play(self):
-        """This function will start the game and reset all the values.
-        Parameters
-        ----------
-        None
-        Returns
-        -------
-        None
-        """
-        self.game_over = False
-
-        # clear the screen
-        self.border_pen.clear()
-        self.food_pen.clear()
-        self.score_pen.clear()
-        self.snake_pen.clear()
-
-        # create an instance of snake
-        self.snake = Snake(self.snake_pen, self.food_pen)
-        self.snake.length = 5
-        self.snake.speed = 1
-        self.snake.food.draw_food()
-
-        self.draw_border()
-        self.draw_information()
-
-        self.check_snake()
+class Clock:
+  # constructor
+  def __init__(self, turtles, size):
+    self.size = size
+    self.t = []
+    for turtle in turtles:
+      turtle.hideturtle()
+      turtle.speed(0)
+      self.t.append(turtle)
   
-    def draw_score(self):
-        """This function will draw game score.
-        Parameters
-        ----------
-        None
-        Returns
-        -------
-        None
-        """
-        self.score_pen.penup()
-        self.score_pen.goto(0,250)
-        self.score_pen.write("Score : " + str(self.snake.length - 5), align="center", font=("Arial", 20, "normal"))
+  # draw the clock circle using first turtle
+  def border(self):
+    self.t[0].speed(0)
+    self.t[0].circle(self.size)
+  
+  # draw the clock hours arrow
+  def hours(self):
+    self.t[1].clear()
+    self.t[1].penup()
+    self.t[1].goto(0,self.size)
+    self.t[1].setheading((-1)*(self.get_h()*360/12-90))
+    self.t[1].pendown()
+    self.t[1].pensize(3)
+    self.t[1].fd(self.size*0.6)
+  
+  # draw the clock minutes arrow
+  def minutes(self):
+    self.t[2].clear()
+    self.t[2].penup()
+    self.t[2].goto(0,self.size)
+    self.t[2].setheading((-1)*(self.get_m()*360/60-90))
+    self.t[2].pendown()
+    self.t[2].pensize(2)
+    self.t[2].fd(self.size*0.7)
+  
+  # draw the clock seconds arrow
+  def seconds(self):
+    self.t[3].clear()
+    self.t[3].penup()
+    self.t[3].goto(0,self.size)
+    self.t[3].setheading((-1)*(self.get_s()*360/60-90))
+    self.t[3].pendown()
+    self.t[3].pensize(1)
+    self.t[3].fd(self.size*0.8)
+
+  def get_h(self):
+    return time.localtime(time.time()).tm_hour
+
+  def get_m(self):
+    return time.localtime(time.time()).tm_min
+
+  def get_s(self):
+    return time.localtime(time.time()).tm_sec
+
+
+def draw():    
+  clock.hours()
+  clock.minutes()
+  clock.seconds()
+  screen.ontimer(draw, 10)
+
+if __name__ == "__main__":    
+  clock = Clock(turtles,100)
+  clock.border()  
+  # numbers
+  t = turtle.Turtle()
+  t.speed(0)
+  t.hideturtle()
+  for number in range(1,13):
+    t.penup()
+    t.goto(0,100)
+    t.setheading((-1)*(30*number -90))
+    t.fd(85)
+    # # use next line to draw the numbers
+    # t.write(number, align="center")
+    # # use next 3 lines to draw the dashes  
+    t.pendown()
+    t.fd(5)
+    t.penup()
     
-    def draw_information(self):
-        """This function will draw game information.
-        Parameters
-        ----------
-        None
-        Returns
-        -------
-        None
-        """
-        self.border_pen.penup()
-        self.border_pen.goto(0,-250)
-        self.border_pen.write("Press Space to restart", align="center", font=("Arial", 18, "normal"))
-        self.border_pen.goto(0,-270)
-        self.border_pen.write("Press Esc to exit", align="center", font=("Arial", 18, "normal"))
-        self.border_pen.pendown()
+  screen = turtle.Screen()
+  turtle.tracer(0,0)
+  draw()
+  turtle.tracer(20,0)
 
-    def draw_border(self):
-        """This function will draw game border.
-        Parameters
-        ----------
-        None
-        Returns
-        -------
-        None
-        """
-        self.border_pen.penup()
-        self.border_pen.goto(-210,210)
-        self.border_pen.pendown()
-        for _ in range(4):
-            self.border_pen.fd(420)
-            self.border_pen.right(90)
-
-    # this funciton will check snake collisions and move
-    def check_snake(self):
-        """This function will check snake state. If game is over, snake
-        game will show "Game Over" message. Otherwise, it will keep
-        running as usual snake game.
-        Parameters
-        ----------
-        None
-        Returns
-        -------
-        None
-        """
-        if not self.game_over:  
-            self.snake_pen.clear()
-            self.snake.draw_snake() 
-        
-            self.score_pen.clear() 
-            self.draw_score()
-            
-            self.snake.move_snake()
-            self.screen.ontimer(lambda: self.check_snake(), 100-self.snake.speed*2)
-            
-            # check if snake ate more food
-            if self.snake.food_collision(self.snake.snake[0].x, self.snake.snake[0].y):
-                self.food_pen.clear() 
-                self.snake.food.create_food()
-                self.snake.food.draw_food()
-
-            # self_collision check
-            elif self.snake.self_collision():
-                print("self collision")
-                self.game_over = True
-
-            # border_collision check
-            elif self.snake.border_collision():
-                print("self collision")
-                self.game_over = True
-     
-        # game over message
-        if self.game_over:
-            self.food_pen.clear() 
-            self.snake_pen.clear() 
-            self.snake_pen.penup()
-            self.snake_pen.goto(0,0)
-            self.snake_pen.write("Game over",align="center",font=("Arial", 20, "normal"))
-    
-            self.game_over = True
-        
-game = Game(screen)
-game.play()
-
-# listen to the changes 
-turtle.update()
-screen.mainloop()
+  turtle.update()
