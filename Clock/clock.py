@@ -58,10 +58,16 @@ class Clock:
   def get_s(self):
     return time.localtime(time.time()).tm_sec
 
-def main():  
+
+def draw():    
+  clock.hours()
+  clock.minutes()
+  clock.seconds()
+  screen.ontimer(draw, 10)
+
+if __name__ == "__main__":    
   clock = Clock(turtles,100)
-  clock.border()
-  
+  clock.border()  
   # numbers
   t = turtle.Turtle()
   t.speed(0)
@@ -73,17 +79,14 @@ def main():
     t.fd(85)
     # # use next line to draw the numbers
     # t.write(number, align="center")
-    # # use next 3 lines to draw the dashes
+    # # use next 3 lines to draw the dashes  
     t.pendown()
     t.fd(5)
     t.penup()
+    
+  screen = turtle.Screen()
+  turtle.tracer(0,0)
+  draw()
+  turtle.tracer(20,0)
 
-  while True:
-    turtle.tracer(0,0)
-    clock.hours()
-    clock.minutes()
-    clock.seconds()
-    turtle.tracer(20,0)
-
-main()
-turtle.update()
+  turtle.update()
