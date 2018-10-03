@@ -37,10 +37,12 @@ def data():
 
 @app.route("/gallery")
 def gallery():
-    links = []
-    for i in range(1, 5):
-        link = "../static/images/NatGeo0" + str(i) + ".jpg"
-        links.append(link)
+    links = [
+      "https://user-images.githubusercontent.com/16161226/46444401-df6b0500-c73f-11e8-89cb-ee3080c5080f.jpg",
+      "https://user-images.githubusercontent.com/16161226/46444402-df6b0500-c73f-11e8-949a-e3e6675b11dd.jpg",
+      "https://user-images.githubusercontent.com/16161226/46444403-df6b0500-c73f-11e8-8cba-5d664fc627fa.jpg",
+      "https://user-images.githubusercontent.com/16161226/46444404-df6b0500-c73f-11e8-8c7f-44c8a8515d01.jpg"  
+    ]
 
     return render_template("gallery.html", links=links)
 
