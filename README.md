@@ -26,9 +26,9 @@ This challenge consists of using Python random library and colorama library to c
 
 ## [Snake](Snake/)
 
-[Demo](https://repl.it/@OleksiiPolovyi/Snake) :video_game:
-
 This challenge consists of using Python turtle library and random library to create a program where the player maneuvers a line which grows in length, with the line itself being a primary obstacle.
+
+[Demo](https://repl.it/@OleksiiPolovyi/Snake) :video_game:
 
 ## [Clock with Turtle](Clock/)
 
