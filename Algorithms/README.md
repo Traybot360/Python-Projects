@@ -1,7 +1,5 @@
 # Examples of Algorithms
 
-[Book with examples using  `c++`](https://cathyatseneca.gitbook.io/data-strutures-and-algorithms/)
-
 ## [Linear Search](./linear_search.py)
 
 Linear search is rarely used practically because other search algorithms allow significantly faster searching.  
@@ -23,3 +21,9 @@ Exponentiation is a mathematical operation, written as b<sup>n</sup>, involving 
 In computer science, binary search, also known as half-interval search, logarithmic search, or binary chop, is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array.
 
 [Demo](https://repl.it/@OleksiiPolovyi/Binary-search) :video_game:
+
+
+## [Towers of Hanoi](./hanoi.py)
+The Tower of Hanoi is a mathematical game or puzzle. It consists of three rods and a number of disks of different sizes, which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top, thus making a conical shape.
+
+[Demo](https://repl.it/@OleksiiPolovyi/Hanoi) :video_game:
