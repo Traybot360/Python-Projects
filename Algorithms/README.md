@@ -23,7 +23,7 @@ In computer science, binary search, also known as half-interval search, logarith
 [Demo](https://repl.it/@OleksiiPolovyi/Binary-search) :video_game:
 
 
-## [Towers of Hanoi](./hanoi.py)
+## [Tower of Hanoi](./hanoi.py)
 The Tower of Hanoi is a mathematical game or puzzle. It consists of three rods and a number of disks of different sizes, which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top, thus making a conical shape.
 
 [Demo](https://repl.it/@OleksiiPolovyi/Hanoi) :video_game:
