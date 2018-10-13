@@ -173,7 +173,7 @@ class Snake(object):
         return collision
     
     def increase_speed(self):
-        """Incerease speed of the snake.
+        """Increase speed of the snake.
         Parameters
         ----------
         None
