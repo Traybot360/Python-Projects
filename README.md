@@ -4,11 +4,11 @@
 
 - [2018](CCC/2018/)
   - [Junior](CCC/2018/Junior/)
-    - [Problem Descriptions](CCC/2018/Junior/junior2018.pdf)
+    - [Problem Descriptions](CCC/2018/Junior/junior2018.pdf) :mag_right:
     - [Telemarketer files](CCC/2018/Junior/telemarketer.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J1-Telemarketer-or-not) :video_game:
     - [Occupy parking files](CCC/2018/Junior/parking.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J2-Occupy-parking) :video_game:
   - [Senior](CCC/2018/Senior/)
-    - [Problem Descriptions](CCC/2018/Senior/senior2018.pdf)
+    - [Problem Descriptions](CCC/2018/Senior/senior2018.pdf) :mag_right:
     - [Voronoi Villages files](CCC/2018/Senior/voronoi.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-S1-Voronoi-Villages) :video_game:
 
 
