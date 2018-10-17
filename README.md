@@ -1,5 +1,12 @@
 # Python projects
 
+## [CCC](CCC/)
+
+- [2018](CCC/2018/)
+  - [Junior](CCC/2018/Junior/)
+    - [Telemarketer files](CCC/2018/Junior/telemarketer.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J1-Telemarketer-or-not) :video_game:
+
+
 ## [Files](Files/)
 
 This project shows how to use files in python.
