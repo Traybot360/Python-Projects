@@ -6,6 +6,9 @@
   - [Junior](CCC/2018/Junior/)
     - [Problem Descriptions](CCC/2018/Junior/junior2018.pdf)
     - [Telemarketer files](CCC/2018/Junior/telemarketer.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J1-Telemarketer-or-not) :video_game:
+  - [Senior](CCC/2018/Senior/)
+    - [Problem Descriptions](CCC/2018/Senior/senior2018.pdf)
+
 
 
 ## [Files](Files/)
