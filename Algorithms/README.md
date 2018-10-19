@@ -1,5 +1,7 @@
 # Examples of Algorithms
 
+[Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+
 ## [Linear Search](./linear_search.py)
 
 Linear search is rarely used practically because other search algorithms allow significantly faster searching.  
