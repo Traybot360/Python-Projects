@@ -10,6 +10,7 @@
   - [Senior](CCC/2018/Senior/)
     - [Problem Descriptions](CCC/2018/Senior/senior2018.pdf) :mag_right:
     - [Voronoi Villages files](CCC/2018/Senior/voronoi.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-S1-Voronoi-Villages) :video_game:
+    - [Substrings](https://repl.it/@OleksiiPolovyi/CCC-03-S4-Substrings) :video_game:
 
 
 ## [Files](Files/)
