@@ -1,3 +1,9 @@
+
+lines = int(input())
+matrix = []
+for line in range(lines):
+  matrix.append(input().split())
+
 # test case 1
 # matrix = [
 #   [1,3],
@@ -5,11 +11,11 @@
 # ]
 
 # test case 2
-matrix = [
-  [4,3,1],
-  [6,5,2],
-  [9,7,3]
-]
+# matrix = [
+#   [4,3,1],
+#   [6,5,2],
+#   [9,7,3]
+# ]
 
 # test case 3
 # matrix = [
@@ -20,8 +26,8 @@ matrix = [
 
 # print the matrix
 def display(data):
-  for row in data:
-	  print(row)
+  for row in data:  
+    print(' '.join(row))
 
 # 90 degrees matrix rotation
 def rotate(data):
