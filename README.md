@@ -5,7 +5,7 @@
 - [2018](CCC/2018/)
   - [Junior](CCC/2018/Junior/)
     - [Problem Descriptions](CCC/2018/Junior/junior2018.pdf) :mag_right:
-    - [Telemarketer files](CCC/2018/Junior/telemarketer.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J1-Telemarketer-or-not) :video_game:
+    - [Telemarketer :paperclip:](CCC/2018/Junior/telemarketer.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J1-Telemarketer-or-not) :video_game:
     - [Occupy parking files](CCC/2018/Junior/parking.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J2-Occupy-parking) :video_game:
     - [Are we there yet?](CCC/2018/Junior/j3) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J3-Are-we-there-yet) :video_game:
     - [Sunflowers](CCC/2018/Junior/sunflowers.py) and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J4-Sunflowers) :video_game:
