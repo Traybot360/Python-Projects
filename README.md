@@ -1,18 +1,8 @@
 # Python projects
 
 ## [CCC](CCC/)
-
-- [2018](CCC/2018/)
-  - [Junior](CCC/2018/Junior/)
-    - [Problem Descriptions](CCC/2018/Junior/junior2018.pdf) :mag_right:
-    - [Telemarketer](CCC/2018/Junior/telemarketer.py) :paperclip: and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J1-Telemarketer-or-not) :video_game:
-    - [Occupy parking files](CCC/2018/Junior/parking.py) :paperclip: and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J2-Occupy-parking) :video_game:
-    - [Are we there yet?](CCC/2018/Junior/j3) :paperclip: and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J3-Are-we-there-yet) :video_game:
-    - [Sunflowers](CCC/2018/Junior/sunflowers.py) :paperclip: and [Demo](https://repl.it/@OleksiiPolovyi/2018-Problem-J4-Sunflowers) :video_game:
-  - [Senior](CCC/2018/Senior/)
-    - [Problem Descriptions](CCC/2018/Senior/senior2018.pdf) :mag_right:
-    - [Substrings](https://repl.it/@OleksiiPolovyi/CCC-03-S4-Substrings) :video_game:
-
+- [Junior](CCC/2018/Junior/)
+- [Senior](CCC/2018/Senior/)
 
 ## [Files](Files/)
 
