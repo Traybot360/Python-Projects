@@ -22,13 +22,13 @@ e = int(input())
 w = int(input())
 
 def charge_a():
-	if d > 100:
+	if d > plan_a['free']:
 		return round(((d - plan_a["free"]) * plan_a["day"]) + (e * plan_a["eve"]) + (w * plan_a["week"]), 2)
 	else:
 		return round((e * plan_a["eve"]) + (w * plan_a["week"]), 2)
 
 def charge_b():
-	if d > 250:
+	if d > plan_b['free']:
 		return round(((d - plan_b["free"]) * plan_b["day"]) + (e * plan_b["eve"]) + (w * plan_b["week"]), 2)
 	else:
 		return round((e * plan_b["eve"]) + (w * plan_b["week"]), 2)
