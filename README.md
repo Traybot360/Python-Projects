@@ -1,8 +1,8 @@
 # Python projects
 
 ## [CCC](https://dmoj.ca/)
-- [Junior](CCC/2018/Junior/)
-- [Senior](CCC/2018/Senior/)
+- [Junior](CCC/Junior/)
+- [Senior](CCC/Senior/)
 
 ## [Files](Files/)
 
