@@ -1,15 +1,17 @@
-curr = input().split()
-dest = input().split()
-charge = int(input())
-x1 = int(curr[0])
-y1 = int(curr[1])
-x2 = int(dest[0])
-y2 = int(dest[1])
+def lst_int(lst):
+  for i in range(len(lst)):
+    lst[i] = int(lst[i])
 
-if(charge>abs(abs(x1-x2)-abs(y1-y2))):
-  if(abs(abs(x1-x2)-abs(y1-y2))%2==0 and charge%2==0):
+a= input().split()
+b = input().split()
+charge = int(input())
+lst_int(a)
+lst_int(b)
+
+if(abs( abs(a[0] - b[0]) + abs(a[1] - b[1])  ) <= charge):
+  if(abs( abs(a[0] - b[0]) + abs(a[1] - b[1])  )%2 == 0 and charge%2 ==0):
     print("Y")
-  elif(abs(abs(x1-x2)-abs(y1-y2))%2!=0 and charge%2!=0):
+  elif(abs( abs(a[0] - b[0]) + abs(a[1] - b[1])  )%2 != 0 and charge%2 !=0):
     print("Y")
   else: print("N")
-else: print("N")                                 
+else: print("N")
